@@ -1,0 +1,26 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+nav ul {
+list-style: none;
+display: flex;
+gap: 15px;
+}
+
+button {
+background-color: blue;
+color: white;
+border: none;
+padding: 10px;
+cursor: pointer;
+}
+
+div[role="alert"] {
+margin-top: 20px;
+color: green;
+font-weight: bold;
+display: none;
+}
