@@ -9,42 +9,251 @@
   <body>
     <header role="banner">
       <!-- aria -->
-      <nav role="navigation">
+      <nav class="nav-bar" role="navigation">
         <!-- aria -->
         <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#home" class="nav-link">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
       </nav>
-    </header>
-    <main>
-      <form>
-        <label for="name">Name:</label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          required
-          aria-invalid="false"
-        /><br />
-        <label for="email">Email:</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          aria-describedby="emailHelp"
-          required
+      <div id="drop-down">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1024px-Hamburger_icon.svg.png"
+          alt="hamburger icon for showing links on hover"
+          width="100px;"
         />
-        <!-- aria; "describedby" ties the input to the relevant comment, so user knows what comment is referring to -->
-        <p id="emailHelp">We'll never share your email with anyone else.</p>
-        <br />
-        <button aria-label="Click to submit the form">Submit</button>
-        <div role="alert" aria-live="polite">Form submitted successfully!</div>
-        <!-- aria -->
-      </form>
-    </main>
+        <div id="drop-down-options">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </header>
+    <div class="grid-container">
+      <div class="hero-section">
+        <!-- first grid container (1/3) -->
+        <main>
+          <section class="login-card">
+            <h1>Accessible Design Co.</h1>
+            <small>Returning User?</small>
+            <form id="loginForm" aria-describedby="formError">
+              <div
+                id="formError"
+                class="error"
+                role="alert"
+                aria-live="polite"
+              ></div>
+
+              <div class="form-group">
+                <label for="name">Name:</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  aria-invalid="false"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email:</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  aria-describedby="emailHelp"
+                  required
+                />
+                <!-- aria; "describedby" ties the input to the relevant comment, so user knows what comment is referring to -->
+              </div>
+              <button aria-label="Click to login into your account.">
+                Log In
+              </button>
+              <div role="alert" aria-live="polite">
+                Form submitted successfully!
+              </div>
+              <!-- aria -->
+            </form>
+            <small id="emailHelp"
+              >We'll never share your email with anyone else.</small
+            >
+            <p>
+              Don't have an account? Register
+              <a href="#here" class="register-link">here.</a>
+            </p>
+          </section>
+        </main>
+      </div>
+      <div class="grid-item-2">
+        <!-- second grid container (2/3) -->
+        <section class="about-us">
+          <h1>About Us</h1>
+          <small>making jewelry inclusive since 1973</small>
+          <p>
+            Our company was founded in 1973 by a Swedish couple that was
+            ostracized by their respective families after marrying against their
+            wishes. Coming from a long line of oligarchs in the ruby and emerald
+            business, they vowed revenge by starting a business that would make
+            jewelry much more afforable and less bourgeois for the masses. The
+            rest of the story is history, except it isn't because of course this
+            is all made up and this is a run on sentence and I am running out of
+            things to say so I think I will stop here, that should be enough
+            text right, yes I think it should be, well just a bit more umm maybe
+            there. One more sentence why not. And one more why not. Why not. Why
+            not. Why.
+          </p>
+          <p>
+            You will notice that this is basically the same paragraph as above,
+            except for this first sentence, plus I trimmed the end off a bit as
+            welk. Our company was founded in 1973 by a Swedish couple that was
+            ostracized by their respective families after marrying against their
+            wishes. Coming from a long line of oligarchs in the ruby and emerald
+            business, they vowed revenge by starting a business that would make
+            jewelry much more afforable and less bourgeois for the masses. We
+            are excited to service you for many more years to come. Happy
+            shopping!
+          </p>
+          <p class="CEO-signature">
+            <em>- Jean Bildungsroman,</em><small>Co-founder & CEO</small>
+          </p>
+        </section>
+      </div>
+      <div class="grid-item-3">
+        <h1>Our Services</h1>
+        <section class="our-services">
+          <div class="service">
+            <h2>Consultation</h2>
+          </div>
+          <div class="service">
+            <h2>Redesign</h2>
+          </div>
+          <div class="service">
+            <h2>Customize</h2>
+          </div>
+          <div class="service">
+            <div class="service-description">
+              <img
+                class="service-image"
+                src="jeweler.webp"
+                alt="A jeweler uses a loupe to examine his work."
+              />
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Blanditiis explicabo, quaerat omnis odit earum voluptas rem,
+                praesentium veritatis dolore eligendi fugit optio quod
+                perferendis excepturi ut porro, aspernatur minus. Quibusdam?
+                Quaerat omnis odit earum voluptas rem, praesentium veritatis
+                dolore eligendi
+              </p>
+            </div>
+          </div>
+          <div class="service">
+            <div class="service-description">
+              <img
+                class="service-image"
+                src="jeweler-2.png"
+                alt="A jeweler tinkers at work with a focused look."
+              />
+              <p>
+                Amet consectetur adipisicing elit. Blanditiis explicabo, quaerat
+                omnis odit earum voluptas rem, praesentium veritatis dolore
+                eligendi fugit optio quod perferendis excepturi ut porro,
+                aspernatur minus. Quibusdam? Lorem ipsum dolor sit, amet
+                consectetur adipisicing elit. Blanditiis explicabo, quaerat
+                omnis odit earum voluptas rem, praesentium veritatis dolore
+                eligendi fugit optio quod perferendis excepturi ut porro,
+                aspernatur minus.
+              </p>
+              <p>
+                Wanna book a free consultation? Go <a href="#here">here</a>.
+              </p>
+            </div>
+          </div>
+          <div class="service">
+            <div class="service-description">
+              <img
+                class="service-image"
+                src="jeweler-3.jpg"
+                alt="Closeup of jeweler's fingers inserting a jewel into a piece with tweezers."
+              />
+              <p>
+                Blanditiis explicabo, quaerat omnis odit earum voluptas rem,
+                praesentium veritatis dolore eligendi fugit optio quod
+                perferendis excepturi ut porro, aspernatur minus. Quibusdam?
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit
+                earum voluptas rem, praesentium veritatis dolore eligendi fugit
+                optio quod
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div class="grid-item-4">
+        <section class="contact-us">
+          <h1>Contact Us</h1>
+          <p class="contact-info">
+            Please fill out and submit the form below if you would like to get
+            in contact with us. Can't wait to hear from you!
+          </p>
+          <form class="contact-form" aria-describedby="contact-form">
+            <label for="name">Name:</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              aria-required="true"
+              aria-label="Your name"
+            />
+
+            <label for="email">Email:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              aria-required="true"
+              aria-label="Your email address"
+            />
+
+            <label for="subject">Subject:</label>
+            <input
+              type="text"
+              id="subject"
+              name="subject"
+              required
+              aria-required="true"
+              aria-label="Subject of your message"
+            />
+
+            <label for="message">Message:</label>
+            <textarea
+              class="message-area"
+              id="message"
+              name="message"
+              rows="5"
+              required
+              aria-required="true"
+              aria-label="Your message"
+            ></textarea>
+          </form>
+          <button class="submit-form" type="submit">Submit</button>
+        </section>
+      </div>
+    </div>
+    <!-- closing the macro-grid -->
+    <footer>
+      <ul class="social-media">
+        <li><a href="Facebook" class="social-media-link">Facebook</a></li>
+        <li><a href="Instagram" class="social-media-link">Instagram</a></li>
+        <li><a href="Tiktok" class="social-media-link">Tiktok</a></li>
+        <li>Phone: +1 (123) 456 - 7890</li>
+        <li>&copy; 2025 My Company</li>
+      </ul>
+    </footer>
     <script src="scripts.js"></script>
   </body>
 </html>

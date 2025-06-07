@@ -1,26 +1,257 @@
-body {
-  font-family: Arial, sans-serif;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body { 
+  display: grid;
+  grid-template-rows: auto 1fr auto; /* nav, main, footer */
+  height: 100vh;
+  font-family: Garamond, Baskerville, serif;
+  font-size: 16px;
+  line-height: 1.5;
   margin: 0;
-  padding: 20px;
+}
+
+.grid-container { /* this is the main/macro grid container */
+  display: grid;
+  grid-template-columns: 1fr; /* 1 column*/
+  grid-template-rows: 1fr .75fr 1fr .60fr; /* 4 rows, 3rd row twice as big as the other 3 */
+  background-color: lightgray;
+}
+
+nav, footer {
+  padding: 0rem 2rem;
+  background-color:pink;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.nav-link,
+.social-media-link {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav-link:visited,
+.social-media-link:visited {
+  color: darkblue;
 }
 
 nav ul {
-list-style: none;
-display: flex;
-gap: 15px;
+  list-style: none; /*gets rid of bullet points*/
+  gap: 200px; /*adds spacd between the options*/
+  display: flex;
+  justify-content: center;
+}
+
+#drop-down {
+  background: pink;
+  display: none;
+  padding-left: 50px;
+}
+
+.hero-section { /* 1st row out of main 4*/
+  background-image: url('pearl_earring.jpg'); /* relative path to your image */
+  background-size: cover;     /* scale image to cover the container */
+  background-position: center;/* center the image */
+  background-repeat: no-repeat;
+}
+
+.grid-item-2 {
+  background-color: lightgreen;
+}
+
+.grid-item-3 {
+  background-color: lightpink;
+}
+
+.grid-item-4 {
+  background-color: lightskyblue;
+}
+
+.our-services {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* 3 columns*/
+  grid-template-rows: .25fr 6fr;/* 2 rows, 1 for image and 1 for text */
+  gap: 1rem 2rem; /* 1rem row gap, 2rem column gap */
+}
+
+.service {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.service-description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0em 2em;
+  background-color: lightpink;
+}
+
+.service-image {
+  width: 100%;
+  height: auto;
+  max-width: 300px;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+}
+
+.service {
+  display: flex;
+
+}
+
+.login-card {
+  margin: 150px auto;
+  max-width: fit-content;
+  padding: 20px 40px;
+  background-color: lightblue;
+}
+
+form {
+  max-width: 400px;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.about-us {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 50px 500px;
+  max-width: fit-content;
+}
+
+.contact-info {
+  display: flex;
+  justify-content: center;
+}
+
+.contact-us {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  width: 220px;
+}
+
+.message-area {
+  width: 400px;
+}
+
+.submit-form {
+  margin: 2em;
+}
+
+.CEO-signature {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.error {
+  color: red;
+  font-size: 0.9rem;
+}
+
+input:invalid,
+textarea:invalid {
+  border-color: red;
 }
 
 button {
-background-color: blue;
-color: white;
-border: none;
-padding: 10px;
-cursor: pointer;
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 5px 15px;
+  cursor: pointer;
 }
 
 div[role="alert"] {
-margin-top: 20px;
-color: green;
-font-weight: bold;
-display: none;
+  margin-top: 20px;
+  color: green;
+  font-weight: bold;
+  display: none;
+}
+
+.register-link {
+  color: blue;
+}
+
+.register-link:visited {
+  color: #000080;
+}
+
+.social-media {
+  display: flex;
+  justify-content: flex-start;
+  list-style: none;
+  gap: 2em;
+}
+
+footer {  
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 600px) {
+  /*
+  .nav-bar ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  */
+  .nav-bar {
+    display: none;
+  }
+  #drop-down {
+    display: block;
+  }
+    #drop-down-options {
+    display: none;
+    position: absolute;
+    padding: 42px;
+  }
+  #drop-down-options a {
+    color: black;
+    text-decoration: none;
+  }
+  #drop-down:hover #drop-down-options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    gap: 2em;
+  }
+}
+
+@media (min-width: 768px) {
+  body {
+    font-size: 18px;
+  }
 }
