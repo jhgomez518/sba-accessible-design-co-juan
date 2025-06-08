@@ -10,7 +10,7 @@ body {
   grid-template-rows: auto 1fr auto; /* nav, main, footer */
   height: 100vh;
   font-family: Garamond, Baskerville, serif;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.5;
   margin: 0;
 }
@@ -60,6 +60,22 @@ nav ul {
   padding-left: 50px;
 }
 
+.skip-nav-link {
+  border: 2px solid #000080;
+  padding: 8px 20px;
+  padding-left: 40px;
+  border-radius: 40px;
+  position: absolute;
+  left: -240px;
+  top: 80px;
+  transition: 3s;
+}
+
+.skip-nav-link:focus {
+  left: -20px;
+  transition: 1s;
+}
+
 .hero-section { /* 1st row out of main 4*/
   background-image: url('pearl_earring.jpg'); /* relative path to your image */
   background-size: cover;     /* scale image to cover the container */
@@ -105,7 +121,7 @@ nav ul {
   max-width: 300px;
 }
 
-h1 {
+h1, h2 {
   display: flex;
   justify-content: center;
 }
@@ -252,6 +268,27 @@ footer {
 
 @media (min-width: 768px) {
   body {
-    font-size: 18px;
+    font-size: 1.125rem;
   }
 }
+
+/*
+  Accessbility features to consider for any webpage (good foundation for accessible web design):
+
+  - include placeholder text for inputs
+  - include alt text for images
+  - include labels for input fields. i.e.:
+
+    <label for="email">Email:</label>
+              <input
+                type="email"
+                placeholder="jeanrene@email.com"
+                id="email"...>
+
+    where "label for=X" matches "input id=X"
+
+  - include non-ambiguous text buttons (i.e. "submit message" vs. "submit")
+  - include semantic html (i.e. using fieldset/legend within <form> tags, and also <button> tags whenev. possible)
+  - ^include headings! (how majority of users navigate webpages) Only 1 H1 element in a page, and descending accordingly
+  - include font-sizes that are defined in rem instead of in pixels (recall, 1 default rem = 16px, so converting px to rem means dividing px amount by 16)
+*/

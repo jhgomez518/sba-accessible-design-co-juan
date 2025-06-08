@@ -9,7 +9,8 @@
   <body>
     <header role="banner">
       <!-- aria -->
-      <nav class="nav-bar" role="navigation">
+      <nav class="nav-bar" aria-label="nav-bar" role="navigation">
+        <a class="skip-nav-link" href="#our-services">Skip to Our Services</a>
         <!-- aria -->
         <ul>
           <li><a href="#home" class="nav-link">Home</a></li>
@@ -40,42 +41,47 @@
             <h1>Accessible Design Co.</h1>
             <small>Returning User?</small>
             <form id="loginForm" aria-describedby="formError">
-              <div
-                id="formError"
-                class="error"
-                role="alert"
-                aria-live="polite"
-              ></div>
+              <fieldset>
+                <legend>Enter Website Here Using Your Login Info</legend>
+                <div
+                  id="formError"
+                  class="error"
+                  role="alert"
+                  aria-live="polite"
+                ></div>
 
-              <div class="form-group">
-                <label for="name">Name:</label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                  aria-invalid="false"
-                />
-              </div>
+                <div class="form-group">
+                  <label for="name">Name:</label>
+                  <input
+                    type="text"
+                    placeholder="Jean Rene"
+                    id="name"
+                    name="name"
+                    required
+                    aria-invalid="false"
+                  />
+                </div>
 
-              <div class="form-group">
-                <label for="email">Email:</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  aria-describedby="emailHelp"
-                  required
-                />
-                <!-- aria; "describedby" ties the input to the relevant comment, so user knows what comment is referring to -->
-              </div>
-              <button aria-label="Click to login into your account.">
-                Log In
-              </button>
-              <div role="alert" aria-live="polite">
-                Form submitted successfully!
-              </div>
-              <!-- aria -->
+                <div class="form-group">
+                  <label for="email">Email:</label>
+                  <input
+                    type="email"
+                    placeholder="jeanrene@email.com"
+                    id="email"
+                    name="email"
+                    aria-describedby="emailHelp"
+                    required
+                  />
+                  <!-- aria; "describedby" ties the input to the relevant comment, so user knows what comment is referring to -->
+                </div>
+                <button aria-label="Click to login into your account.">
+                  Log In
+                </button>
+                <div role="alert" aria-live="polite">
+                  Form submitted successfully!
+                </div>
+                <!-- aria -->
+              </fieldset>
             </form>
             <small id="emailHelp"
               >We'll never share your email with anyone else.</small
@@ -90,7 +96,7 @@
       <div class="grid-item-2">
         <!-- second grid container (2/3) -->
         <section class="about-us">
-          <h1>About Us</h1>
+          <h2>About Us</h2>
           <small>making jewelry inclusive since 1973</small>
           <p>
             Our company was founded in 1973 by a Swedish couple that was
@@ -122,16 +128,16 @@
         </section>
       </div>
       <div class="grid-item-3">
-        <h1>Our Services</h1>
-        <section class="our-services">
+        <h2>Our Services</h2>
+        <section class="our-services" id="our-services">
           <div class="service">
-            <h2>Consultation</h2>
+            <h3>Consultation</h3>
           </div>
           <div class="service">
-            <h2>Redesign</h2>
+            <h3>Redesign</h3>
           </div>
           <div class="service">
-            <h2>Customize</h2>
+            <h3>Customize</h3>
           </div>
           <div class="service">
             <div class="service-description">
@@ -193,54 +199,61 @@
       </div>
       <div class="grid-item-4">
         <section class="contact-us">
-          <h1>Contact Us</h1>
+          <h2>Contact Us</h2>
           <p class="contact-info">
             Please fill out and submit the form below if you would like to get
             in contact with us. Can't wait to hear from you!
           </p>
           <form class="contact-form" aria-describedby="contact-form">
-            <label for="name">Name:</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              required
-              aria-required="true"
-              aria-label="Your name"
-            />
+            <fieldset>
+              <legend>Enter Details To Send Us a Message</legend>
+              <label for="name">Name:</label>
+              <input
+                type="text"
+                placeholder="Jean Rene"
+                id="name"
+                name="name"
+                required
+                aria-required="true"
+                aria-label="Your name"
+              />
 
-            <label for="email">Email:</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              required
-              aria-required="true"
-              aria-label="Your email address"
-            />
+              <label for="email">Email:</label>
+              <input
+                type="email"
+                placeholder="jeanrene@email.com"
+                id="email"
+                name="email"
+                required
+                aria-required="true"
+                aria-label="Your email address"
+              />
 
-            <label for="subject">Subject:</label>
-            <input
-              type="text"
-              id="subject"
-              name="subject"
-              required
-              aria-required="true"
-              aria-label="Subject of your message"
-            />
+              <label for="subject">Subject:</label>
+              <input
+                type="text"
+                placeholder="My Inquiry"
+                id="subject"
+                name="subject"
+                required
+                aria-required="true"
+                aria-label="Subject of your message"
+              />
 
-            <label for="message">Message:</label>
-            <textarea
-              class="message-area"
-              id="message"
-              name="message"
-              rows="5"
-              required
-              aria-required="true"
-              aria-label="Your message"
-            ></textarea>
+              <label for="message">Message:</label>
+              <textarea
+                class="message-area"
+                placeholder="This is a description of my inquiry. By the way, your company is the best and I can't wait to do business with you. - Jean Rene"
+                id="message"
+                name="message"
+                rows="5"
+                required
+                aria-required="true"
+                aria-label="Your message"
+              ></textarea>
+            </fieldset>
           </form>
-          <button class="submit-form" type="submit">Submit</button>
+          <button class="submit-form" type="submit">Submit Message</button>
         </section>
       </div>
     </div>
