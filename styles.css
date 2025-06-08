@@ -235,6 +235,16 @@ footer {
   align-items: center;
 }
 
+#name:focus,
+#email:focus,
+#subject:focus,
+#message:focus {
+  outline: 3px solid #007BFF;
+  outline-offset: 2px;
+  background-color: #f0f8ff;
+  transition: all 0.2s ease-in-out;
+}
+
 @media (max-width: 600px) {
   /*
   .nav-bar ul {
